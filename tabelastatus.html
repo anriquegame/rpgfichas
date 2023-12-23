@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rpg ficha</title>
+        <script src="code.js"></script>
+        <link href="style2.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/x-icon" href="voidsimbulo.ico"/>
+    </head>
+    <body>
+        <!-- Adicione um campo de entrada de arquivo -->
+        <label for="arquivo">Load um arquivo:</label>
+        <input type="file" id="arquivo" accept=".txt" oninput="loadStatus(this)">
+        <!-- <button onclick="loadStatus()">Load</button> -->
+        <br>
+        <a onclick="whiteMode()" class="botao">Toggle white/black mode</a>
+        <form onsubmit="submitStatus(event)">
+            <!--status_top-->
+            <label for="xp" onclick="labelSelect(this)">XP</label>
+            <input type="number" name="xp" id="xp" min="0" oninput="validarxpInput(this)" value="0">
+            <br/>
+            <label for="vida" onclick="labelSelect(this)">vida</label>
+            <input type="number" name="vida" id="vida" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="carisma" onclick="labelSelect(this)">carisma</label>
+            <input type="number" name="carisma" id="carisma" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <!--status_combate-->
+            <label for="armas_corpo_a_corpo" onclick="labelSelect(this)">armas_corpo_a_corpo</label>
+            <input type="number" name="armas_corpo_a_corpo" id="armas_corpo_a_corpo" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="maestria_de_arma" onclick="labelSelect(this)">maestria_de_arma</label>
+            <input type="number" name="maestria_de_arma" id="maestria_de_arma" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <!--status_magias-->
+            <label for="magia_o" onclick="labelSelect(this)">ocultismo</label>
+            <input type="number" name="magia_o" id="magia_o" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="magia_a" onclick="labelSelect(this)">magia_arcana</label>
+            <input type="number" name="magia_a" id="magia_a" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="magia_f" onclick="labelSelect(this)">fetiçaria</label>
+            <input type="number" name="magia_f" id="magia_f" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <!--status_gerais-->
+            <label for="acrobacias" onclick="labelSelect(this)">acrobacias</label>
+            <input type="number" name="acrobacias" id="acrobacias" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="destreza" onclick="labelSelect(this)">destreza(/iniciativa)</label>
+            <input type="number" name="destreza" id="destreza" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="const" onclick="labelSelect(this)">constituição</label>
+            <input type="number" name="const" id="const" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="forca" onclick="labelSelect(this)">força</label>
+            <input type="number" name="forca" id="forca" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="furtividade" onclick="labelSelect(this)">furtividade</label>
+            <input type="number" name="furtividade" id="furtividade" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="arremesso" onclick="labelSelect(this)">arremesso</label>
+            <input type="number" name="arremesso" id="arremesso" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="encontrar" onclick="labelSelect(this)">encontrar</label>
+            <input type="number" name="encontrar" id="encontrar" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="poder" onclick="labelSelect(this)">poder</label>
+            <input type="number" name="poder" id="poder" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="ouvir" onclick="labelSelect(this)">ouvir</label>
+            <input type="number" name="ouvir" id="ouvir" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="sorte" onclick="labelSelect(this)">sorte</label>
+            <input type="number" name="sorte" id="sorte" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <!--status_de_conhecimento-->
+            <label for="usar_computadores" onclick="labelSelect(this)">usar_computadores</label>
+            <input type="number" name="usar_computadores" id="usar_computadores" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="lidar_com_animais" onclick="labelSelect(this)">lidar_com_animais</label>
+            <input type="number" name="lidar_com_animais" id="lidar_com_animais" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="usar_bibliotecas" onclick="labelSelect(this)">usar_bibliotecas</label>
+            <input type="number" name="usar_bibliotecas" id="usar_bibliotecas" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="usar_veiculos" onclick="labelSelect(this)">usar_veiculos</label>
+            <input type="number" name="usar_veiculos" id="usar_veiculos" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="sobrevivencia" onclick="labelSelect(this)">sobrevivencia</label>
+            <input type="number" name="sobrevivencia" id="sobrevivencia" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="culinaria" onclick="labelSelect(this)">culinaria</label>
+            <input type="number" name="culinaria" id="culinaria" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="medicina" onclick="labelSelect(this)">medicina</label>
+            <input type="number" name="medicina" id="medicina" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="mecanica" onclick="labelSelect(this)">mecanica</label>
+            <input type="number" name="mecanica" id="mecanica" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="historia" onclick="labelSelect(this)">historia</label>
+            <input type="number" name="historia" id="historia" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="biologia" onclick="labelSelect(this)">biologia</label>
+            <input type="number" name="biologia" id="biologia" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="quimica" onclick="labelSelect(this)">quimica</label>
+            <input type="number" name="quimica" id="quimica" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="linguas" onclick="labelSelect(this)">linguas</label>
+            <input type="number" name="linguas" id="linguas" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <label for="arte" onclick="labelSelect(this)">arte</label>
+            <input type="number" name="arte" id="arte" max="20" min="0" oninput="validarInput(this)" value="0">
+            <br/>
+            <!--acabou status-->
+            <button type="submit">download</button>
+        </form>
+        <table id="myTable">
+            <tr>
+                <td class="red"><= falha</td>
+                <td class="green">>= normal</td>
+                <td class="blue">>= bom</td>
+                <td class="purple">>= extremo</td>
+            </tr>
+        </table>
+        <script>criarTabela()</script>
+    </body>
+</html>

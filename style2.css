@@ -12,20 +12,10 @@ body, form input, textarea{
     background-color: #d6d6d6;
 }
 form{
-    margin-top: 1px;
+    /* margin-top: 1px; */
     float: left;
     /* display: inline-block; */
     text-align: right;
-}
-form p{
-    margin: 0px;
-    margin-bottom: 5px;
-}
-form p span{
-    margin-right: 10px;
-}
-form input{
-    margin: 1px;
 }
 
 a{
@@ -67,20 +57,35 @@ a{
     border-color: #fff; /* Cor da borda ao passar o mouse */
 }
 
-table td {
+/* table td {
     border: 1px solid black;
-    /* width: 10px;  */
     height: 14px;
     padding: 2px;
+} */
+form input{
+    font-size: 0.9em;
+    padding: 0;
+    padding-left: 1px;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 20%;
 }
-
+form table tr td{
+    gap: 0;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    justify-content: flex-end;
+    text-align: right;
+}
 table{
     float: left;
+    font-size: 1em;
 }
 
-table tr td{
+#myTable tr td{
     text-align: center;
-    font-size: 13.3px;
+    /* font-size: 13.3px; */
 }
 
 .red{
@@ -98,3 +103,5 @@ table tr td{
 .purple{
     background-color: purple;
 }
+
+/* border-spacing: 2px; */

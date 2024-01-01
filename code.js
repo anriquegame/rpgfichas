@@ -62,7 +62,7 @@ function updateXP(){
     
     try{
         document.getElementById("xpG").innerText = "xp_guardado: " + xpG;
-        document.getElementById("xpU").innerText = "xp_guardado: " + xpU;
+        document.getElementById("xpU").innerText = "xp_usado: " + xpU;
         document.getElementById("xpT").innerText = "xp_total: " + parseInt(xpG + xpU);
     }
     catch{
